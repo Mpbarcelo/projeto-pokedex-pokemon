@@ -1,0 +1,139 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 1280px;
+    margin: 0 auto;
+    background-color: #5e5b5bad;
+    color: #333333;
+}
+body>h1{
+    margin: 15px;
+    text-align: center;
+    color: rgb(221, 168, 130);
+    border-radius: 5px;
+}
+
+body.modo-escuro {
+    background-color: #212121;
+    color: #f5f5f5;
+}
+
+/* display flex coloca logo e botão um ao lado do outro e o justify-content space--betweem vai dar espaço entre eles ja o padding vai afastar eles das bordas da caixa*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+/* trasition dara suavidade ao passar o mouse no logo e botao */
+header .logo,
+header .imagem-botao {
+    width: 30px;
+    transition: 0.2s ease-in-out;
+}
+
+/* #botao-alterar-tema estou estilisando uma id por isso uso o # */
+header #botao-alterar-tema {
+    background: none;
+    border: none;
+}
+
+/* com o : estou usando uma psoudoclasse, transforme sacale aumenta em 1.05 o tamanho do botao e imagem */
+header .logo:hover,
+header .imagem-botao:hover,
+main .cartao-pokemon:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+main {
+    background-color: antiquewhite;
+    padding: 25px;
+}
+
+/* display-flex coloca um ao lado do outro e flex-wrap; wrap; separa em caixas  e vai quebrando linha colocando uma ao lado da outra o gap da espaço entre os cartoes, justify alinha o conteudo no centro*/
+main .listagen-pokemon {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+main .cartao-pokemon {
+    background-color: #d8e3ec;
+    width: 200px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+/* para colocar essa cor #96d9d6 so no cartao */
+main .cartao-pokemon:hover {
+    background-color: #96d9d6;
+}
+
+.modo-escuro .cartao-pokemon {
+    background-color: #a8a8a8;
+}
+
+main .cartao-pokemon .informacoes {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #333333;
+    border-radius: 10px;
+}
+
+/* pading deu espaço entre o nome e a # com numeros dos pokemon, text-transform uppercase coloca os nomes dos pokemons em maiusculo */
+main .cartao-pokemon .informacoes span {
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+main .cartao-pokemon .gif {
+    width: 90px;
+    height: 90px;
+}
+
+/* display flex cologou grama e veneno um do lado do outro e gap deu espaço entre eles */
+main .cartao-pokemon .tipos {
+    display: flex;
+    gap: 15px;
+}
+
+/* padding afastou um pouco da caixa e border radius arredondou a borda dos tipos EX: grama, veneno, fogo etc */
+main .cartao-pokemon .tipo {
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.grama {
+    background-color: #7ac74c;
+}
+
+.veneno {
+    background-color: #df67dd;
+}
+
+.fogo {
+    background-color: #ee8130;
+}
+
+.agua {
+    background-color: #6390f0;
+}
+
+.inseto {
+    background-color: #a6b91a;
+}
+
+/* max-height coloca altura maxima na descrição e o overflow-y escondeu o texto no eixo y(vertical) e scroll colocou barra de rolagen para ver o restante do texto escondido*/
+main .descricao {
+    max-height: 80px;
+    overflow-y: scroll;
+    font-size: 14px;
+    padding-right: 10px;
+}
